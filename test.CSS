@@ -1,0 +1,8 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#grid-container{
+    display: grid;
+    grid-template-columns: 500px 263px 263px ;
+}
