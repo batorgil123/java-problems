@@ -430,7 +430,96 @@
 //     }
 //   }
 // }
+// console.log(a);
 // console.log(c);
 
 // 4. Өгөгдсөн тоо палиндром бол YES үгүй бол NO гэж хэвлэ. Палиндром тоо гэдэг нь тонгорогсон тоотойгоо тэнцүү тоог хэлнэ.
-// let n=prompt(Number);
+// let n = prompt(Number),
+//   k = 0;
+// let N = n,
+//   L = n,
+//   z = 0;
+// while (n > 0) {
+//   n = Math.floor(n / 10);
+//   k++;
+// }
+// m = Math.pow(10, k - 1);
+// for (let i = 1; i <= k / 2; i++) {
+//   if (Math.floor(N / m) != L % 10) {
+//     console.log("NO");
+//     z = 1;
+//     break;
+//   }
+//   N = N % m;
+//   m = m / 10;
+//   L = Math.floor(L / 10);
+//   console.log(N, L);
+// }
+// if (z == 0) console.log("YES");
+
+//5. Нэг хэмжээст массив дахь сондгой тоонууд нь тэгш тоонуудаасаа их бол YES, үгүй бол NO гэж хэвлэ.
+// let n=prompt(Number),sondgoi=0,tegsh=0,m;
+// for(let i=1;i<=n;i++){
+//     m=prompt(Number);
+//     if(m%2==1) sondgoi++;
+//     else tegsh++;
+// }
+// if(sondgoi>tegsh) console.log("YES");
+// else console.log("NO");
+
+// 6. k ширхэг шагайг орхиход /хаяхад/ буух ялгаатай боломжийн тоог ол. Шагай нь морь, тэмээ, хонь, ямаа гэсэн 4 янзаар бууна.
+// let k=prompt(Number);
+// 4
+// 1  1  1  1
+// 2  2  2  2
+// 3  3  3  3
+// 4  4  4  4
+
+// // 3 = 64-()
+// 1  1  1
+// 2  2  2
+// 3  3  3
+// 4  4  4
+
+// // 2=10
+// 1 1    11 12 13 14  22 23 24  33 34  44
+// 2 2
+// 3 3
+// 4 4
+
+// // 1=4
+// 1
+// 2
+// 3
+// 4
+
+//7. Өгөгдсөн a тооны өгөгдсөн n тоо хүртэлх зэрэгтүүдийн нийлбэрийг ол. 1+a1+a2+a3+...+an.
+// let a=prompt(Number),n=prompt(Number),sum=0;
+// for(let i=1;i<=n;i++)
+// sum+=Math.pow(a,i);
+
+// console.log(sum);
+
+//8. Англи цагаан толгойн өгөгдсөн 3 үсгийг харгалзах том үсэгт нь шилжүүл.
+// let s1=prompt(String), s2=prompt(String) ,s3=prompt(String);
+// if(s1.charCodeAt()>=97) console.log(String.fromCharCode( s1.charCodeAt()-32));
+// else console.log(s1);
+// if(s2.charCodeAt()>=97) console.log(String.fromCharCode( s2.charCodeAt()-32));
+// else console.log(s2);
+// if(s3.charCodeAt()>=97) console.log(String.fromCharCode( s3.charCodeAt()-32));
+// else console.log(s3);
+
+//9. Супер хүү тул зогсож байгаа байрлалаасаа 3 янзаар урагшилна. Дараагийн гишгүүрт очихоос гадна  1 болон 2 гишгүүр алгасач чадна. 1-р гишгүүрийн өмнө зогсож буй супер хүү хичнээн ялгаатай маршрутаар n-р гишгүүрт хүрэх вэ?
+// let n=prompt(Number),a=Array(100);
+// a[1]=1;
+// a[2]=2;
+// a[3]=4;
+// a[4]=
+// 1 1 1 1
+// 1 1 2
+// 1 2 1
+// 1 3
+// 2 1 1
+// 2 2
+
+
