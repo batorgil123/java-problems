@@ -511,15 +511,26 @@
 
 //9. Супер хүү тул зогсож байгаа байрлалаасаа 3 янзаар урагшилна. Дараагийн гишгүүрт очихоос гадна  1 болон 2 гишгүүр алгасач чадна. 1-р гишгүүрийн өмнө зогсож буй супер хүү хичнээн ялгаатай маршрутаар n-р гишгүүрт хүрэх вэ?
 // let n=prompt(Number),a=Array(100);
-// a[1]=1;
-// a[2]=2;
-// a[3]=4;
-// a[4]=
-// 1 1 1 1
-// 1 1 2
-// 1 2 1
-// 1 3
-// 2 1 1
-// 2 2
 
-
+// RGB7317 - Цөөн квадрат
+let n = prompt(Number),
+  m = prompt(Number),
+  a = [],
+  b = [],
+  tal,
+  i = 0,
+  ih,
+  baga;
+ih = Math.max(n, m);
+baga = Math.min(n, m);
+while (1) {
+  a[i] = Math.floor(ih / baga); 
+  b[i] = baga; 
+  tal = ih % baga; 
+  ih = baga;  
+  baga = tal;  
+  i++;
+  if (tal == 0) break; 
+}
+console.log(b);
+console.log(a);
