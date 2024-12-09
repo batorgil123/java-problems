@@ -379,27 +379,35 @@
 // else console.log("Giiguulegch");
 
 // 1. Өгөгдсөн тоонд өгөгдсөн цифр хэдэн удаа орсныг ол.
-// let n = prompt(Number),
-//   m = prompt(Number),
-//   k = 0;
 
-// while (n > 0) {
-//   if (n % 10 == m) k++;
-//   n = Math.floor(n / 10);
-// }
-// console.log(k);
+function tsifr_tool(param1, param2) {
+  let answer = 0;
+  while (param1 > 0) {
+    if (param1 % 10 == param2) answer++;
+    param1 = Math.floor(param1 / 10);
+  }
+  return answer;
+}
 
 // 2. Өгөгдсөн хоёр натурал тооны хамгийн их ерөнхий хуваагчийг ол.
-// let a = prompt(Number),
-//   b = prompt(Number);
-// while (a > 0 && b > 0) {
-//   if (a > b) a = a % b;
-//   else b = b % a;
-// }
-// if (a > 0) console.log(a);
-// else console.log(b);
+function hieh(a,b){
+  while (a > 0 && b > 0) {
+    if (a > b) a = a % b;
+    else b = b % a;
+  }
+  if (a > 0) return a;
+  else return b;
+}
+
 
 // 3. Элсэлтийн ерөнхий шалгалтын (ЭЕШ) математикийн дүнг сурагчдын хувийн дугаараар нь жагсаан гаргасан байгаа. Өндөр оноотой сурагчдыг эхэнд нь жагсааж бич. Оноо тэнцсэн тохиолдолд хувийн дугаар багатайг нь эхэнд нь жагсаана. Сурагчдын хувийн дугаар 1, 2, 3, гэх мэтээр үргэлжлэн олгогдсон байгаа.
+// function eysh(Array()){
+//   a=[];
+//   a
+//   return ;
+// }
+// console.log(2,3,4,5,6);
+
 // let n = prompt(Number),
 //   a = Array(100),
 //   k = 0,
@@ -434,28 +442,14 @@
 // console.log(c);
 
 // 4. Өгөгдсөн тоо палиндром бол YES үгүй бол NO гэж хэвлэ. Палиндром тоо гэдэг нь тонгорогсон тоотойгоо тэнцүү тоог хэлнэ.
-// let n = prompt(Number),
-//   k = 0;
-// let N = n,
-//   L = n,
-//   z = 0;
-// while (n > 0) {
-//   n = Math.floor(n / 10);
-//   k++;
-// }
-// m = Math.pow(10, k - 1);
-// for (let i = 1; i <= k / 2; i++) {
-//   if (Math.floor(N / m) != L % 10) {
-//     console.log("NO");
-//     z = 1;
-//     break;
-//   }
-//   N = N % m;
-//   m = m / 10;
-//   L = Math.floor(L / 10);
-//   console.log(N, L);
-// }
-// if (z == 0) console.log("YES");
+function palindrome_check(n){
+  let str1=n.toString();
+  let str2=str1.split('').reverse().join('');
+  if(str1==str2) return "YES";
+  return "NO";
+}
+
+
 
 //5. Нэг хэмжээст массив дахь сондгой тоонууд нь тэгш тоонуудаасаа их бол YES, үгүй бол NO гэж хэвлэ.
 // let n=prompt(Number),sondgoi=0,tegsh=0,m;
@@ -501,36 +495,48 @@
 // console.log(sum);
 
 //8. Англи цагаан толгойн өгөгдсөн 3 үсгийг харгалзах том үсэгт нь шилжүүл.
-// let s1=prompt(String), s2=prompt(String) ,s3=prompt(String);
-// if(s1.charCodeAt()>=97) console.log(String.fromCharCode( s1.charCodeAt()-32));
-// else console.log(s1);
-// if(s2.charCodeAt()>=97) console.log(String.fromCharCode( s2.charCodeAt()-32));
-// else console.log(s2);
-// if(s3.charCodeAt()>=97) console.log(String.fromCharCode( s3.charCodeAt()-32));
-// else console.log(s3);
+// let s1=prompt(), s2=prompt() ,s3=prompt();
+// console.log();
 
 //9. Супер хүү тул зогсож байгаа байрлалаасаа 3 янзаар урагшилна. Дараагийн гишгүүрт очихоос гадна  1 болон 2 гишгүүр алгасач чадна. 1-р гишгүүрийн өмнө зогсож буй супер хүү хичнээн ялгаатай маршрутаар n-р гишгүүрт хүрэх вэ?
-// let n=prompt(Number),a=Array(100);
+// let n = prompt(),
+//   a = [];
+// a[1] = 1;
+// a[2] = 2;
+// a[3] = 4;
+// for (let i = 4; i <= n; i++)
+//   a[i] = a[i-3] + a[i-2] + a[i-1];
+
+// console.log(a[n]);
 
 // RGB7317 - Цөөн квадрат
-let n = prompt(Number),
-  m = prompt(Number),
-  a = [],
-  b = [],
-  tal,
-  i = 0,
-  ih,
-  baga;
-ih = Math.max(n, m);
-baga = Math.min(n, m);
-while (1) {
-  a[i] = Math.floor(ih / baga); 
-  b[i] = baga; 
-  tal = ih % baga; 
-  ih = baga;  
-  baga = tal;  
-  i++;
-  if (tal == 0) break; 
+// let n = prompt(Number),
+//   m = prompt(Number),
+//   a = [],
+//   b = [],
+//   tal,
+//   i = 0,
+//   ih,
+//   baga;
+// ih = Math.max(n, m);
+// baga = Math.min(n, m);
+// while (1) {
+//   a[i] = Math.floor(ih / baga);
+//   b[i] = baga;
+//   tal = ih % baga;
+//   ih = baga;
+//   baga = tal;
+//   i++;
+//   if (tal == 0) break;
+// }
+// console.log(b);
+// console.log(a);
+function two_sum(nums,target){
+  nums=[];
+  for(let i=0;i<nums.length()-1;i++){
+    for(let j=i+1;j<nums.length();j++){
+      if(nums[i]+nums[j]==target) return (i,j);
+    }
+  }
 }
-console.log(b);
-console.log(a);
+console.log( two_sum(2,7,11,15));
