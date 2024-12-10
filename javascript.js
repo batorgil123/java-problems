@@ -390,7 +390,7 @@ function tsifr_tool(param1, param2) {
 }
 
 // 2. Өгөгдсөн хоёр натурал тооны хамгийн их ерөнхий хуваагчийг ол.
-function hieh(a,b){
+function hieh(a, b) {
   while (a > 0 && b > 0) {
     if (a > b) a = a % b;
     else b = b % a;
@@ -398,7 +398,6 @@ function hieh(a,b){
   if (a > 0) return a;
   else return b;
 }
-
 
 // 3. Элсэлтийн ерөнхий шалгалтын (ЭЕШ) математикийн дүнг сурагчдын хувийн дугаараар нь жагсаан гаргасан байгаа. Өндөр оноотой сурагчдыг эхэнд нь жагсааж бич. Оноо тэнцсэн тохиолдолд хувийн дугаар багатайг нь эхэнд нь жагсаана. Сурагчдын хувийн дугаар 1, 2, 3, гэх мэтээр үргэлжлэн олгогдсон байгаа.
 // function eysh(Array()){
@@ -442,14 +441,12 @@ function hieh(a,b){
 // console.log(c);
 
 // 4. Өгөгдсөн тоо палиндром бол YES үгүй бол NO гэж хэвлэ. Палиндром тоо гэдэг нь тонгорогсон тоотойгоо тэнцүү тоог хэлнэ.
-function palindrome_check(n){
-  let str1=n.toString();
-  let str2=str1.split('').reverse().join('');
-  if(str1==str2) return "YES";
+function palindrome_check(n) {
+  let str1 = n.toString();
+  let str2 = str1.split("").reverse().join("");
+  if (str1 == str2) return "YES";
   return "NO";
 }
-
-
 
 //5. Нэг хэмжээст массив дахь сондгой тоонууд нь тэгш тоонуудаасаа их бол YES, үгүй бол NO гэж хэвлэ.
 // let n=prompt(Number),sondgoi=0,tegsh=0,m;
@@ -531,12 +528,90 @@ function palindrome_check(n){
 // }
 // console.log(b);
 // console.log(a);
-function two_sum(nums,target){
-  nums=[];
-  for(let i=0;i<nums.length()-1;i++){
-    for(let j=i+1;j<nums.length();j++){
-      if(nums[i]+nums[j]==target) return (i,j);
+// function two_sum(nums, target) {
+// for (let i = 0; i < nums.length - 1; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         return [i, j];
+//       }
+//     }
+//   }
+//   return null;
+// }
+
+// console.log(two_sum([2, 7, 11, 15], 9));
+
+// function addTwoNumbers(num1, num2) {
+//   let ans = [];
+//   let k = 0;
+//   let len = Math.max(num1.length, num2.length);
+
+//   for (let i = 0; i < len; i++) {
+//     let digit1 = i < num1.length ? num1[i] : 0;
+//     let digit2 = i < num2.length ? num2[i] : 0;
+//     let sum = digit1 + digit2 + k;
+
+//     ans.push(sum % 10);
+//     k = Math.floor(sum / 10);
+//   }
+//   if (k === 1) ans.push(1);
+//   return ans;
+// }
+
+// // 8,9,9,9,0,0,0,1
+
+// var addTwoNumbers = function(l1, l2) {
+
+//   let ans = [],
+//     k = 0,
+//     len = Math.max(l1.length, l2.length);
+//   if (l1.length >= l2.length) {
+//     for (let i = l2.length; i < l1.length; i++) l2[i] = 0;
+//   } else {
+//     for (let i = l1.length; i < l2.length; i++) l1[i] = 0;
+//   }
+
+//   for (let i = 0; i < len; i++) {
+//     ans[i] = (l1[i] + l2[i] + k) % 10;
+//     if (l1[i] + l2[i] + k > 9) k = 1;
+//     else k = 0;
+//   }
+//   if (k == 1) ans[len] = ans[len] + 1;
+//   return ans;
+// };
+
+//Container with most water
+function Calculate(nums) {
+  let i = 0,
+    j = 1,
+    sum = 0,
+    capacity = 0,
+    cap;
+  while (j < nums.length) {
+    if (nums[i] <= nums[j]) {
+      sum = 0;
+      for (let c = i + 1; c < j; c++) sum = sum + (nums[i] - nums[c]);
+
+      cap = nums[i] * (j - i) + sum;
     }
+    if (capacity < cap) {
+      capacity = cap;
+      index1 = i;
+      index2 = j;
+      i = j;
+      j = i + 1;
+      continue;
+    }
+    j++;
   }
+  return [index1, index2, capacity];
 }
-console.log( two_sum(2,7,11,15));
+console.log(Calculate([5, 3, 4, 7, 4, 3, 2, 3, 9]));
+
+//       1
+//       1
+// 1     1
+// 1   1 1 1
+// 1 1 1 1 1 1   1
+// 1 1 1 1 1 1 1 1
+// 1 1 1 1 1 1 1 1
