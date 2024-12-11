@@ -581,37 +581,42 @@ function palindrome_check(n) {
 // };
 
 //Container with most water
-function Calculate(nums) {
-  let i = 0,
-    j = 1,
-    sum = 0,
-    capacity = 0,
-    cap;
-  while (j < nums.length) {
-    if (nums[i] <= nums[j]) {
-      sum = 0;
-      for (let c = i + 1; c < j; c++) sum = sum + (nums[i] - nums[c]);
+// function Calculate(nums) {
+//   let capacity
 
-      cap = nums[i] * (j - i) + sum;
-    }
-    if (capacity < cap) {
-      capacity = cap;
-      index1 = i;
-      index2 = j;
-      i = j;
-      j = i + 1;
-      continue;
-    }
-    j++;
-  }
-  return [index1, index2, capacity];
+// }
+
+//       1         1
+//       1         1
+// 1     1         1
+// 1   1 1 1       1
+// 1 1 1 1 1 1   1 1
+// 1 1 1 1 1 1 1 1 1
+// 1 1 1 1 1 1 1 1 1
+// var maxArea = function(height) {
+//   let maxArea = 0;
+//   let left = 0;
+//   let right = height.length - 1;
+
+//   while (left < right) {
+//       maxArea = Math.max(maxArea, (right - left) * Math.min(height[left], height[right]));
+
+//       if (height[left] < height[right]) {
+//           left++;
+//       } else {
+//           right--;
+//       }
+//   }
+
+//   return maxArea;
+// };
+
+function bla3(str) {
+  let str2=str.split("@");
+  let ans = str2[0].split(".");
+  let s=ans[0].toUpperCase();
+  let st = ans[1][0].toUpperCase().concat(".", s);
+
+  return st;
 }
-console.log(Calculate([5, 3, 4, 7, 4, 3, 2, 3, 9]));
-
-//       1
-//       1
-// 1     1
-// 1   1 1 1
-// 1 1 1 1 1 1   1
-// 1 1 1 1 1 1 1 1
-// 1 1 1 1 1 1 1 1
+console.log(bla3("fwef.bg@gmail.com"));
